@@ -162,9 +162,9 @@ module.exports = function(grunt) {
         if (options.amd) {
           // Wrap the file in an AMD define fn.
           if (typeof options.amd === 'boolean') {
-            output.unshift('define([\'handlebars\'], function(Handlebars) {');
+            output.unshift('__tk2__define([\'handlebars\'], function(Handlebars) {');
           } else if (typeof options.amd === 'string') {
-            output.unshift('define([\'' + options.amd + '\'], function(Handlebars) {');
+            output.unshift('__tk2__define([\'' + options.amd + '\'], function(Handlebars) {');
           } else if (Array.isArray(options.amd)) {
             // convert options.amd to a string of dependencies for require([...])
             var amdString = '';
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
             }
 
             // Wrap the file in an AMD define fn.
-            output.unshift('define([' + amdString + '], function(Handlebars) {');
+            output.unshift('__tk2__define([' + amdString + '], function(Handlebars) {');
           }
 
           if (useNamespace) {
