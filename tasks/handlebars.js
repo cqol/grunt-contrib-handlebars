@@ -163,6 +163,7 @@ module.exports = function(grunt) {
           // Wrap the file in an AMD define fn.
 					// Wrap the file in an AMD define fn.
 					output.unshift("__tk2__define(function (require, exports, module) {var Handlebars = require('./lib/handlebars');");
+
 					if (options.namespace !== false) {
 						// Namespace has not been explicitly set to false; the AMD
 						// wrapper will return the object containing the template.
